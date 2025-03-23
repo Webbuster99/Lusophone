@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>YOUR USERNAME - Task 1</title>
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=tXrisAqqlATyaMd-G5nX0IhpvF0v2xXg4wmTSPehf0r9CWUysMc07PHae9RV7-4nsQvcJPudr7S1aKwetpq_AJ8eQhfqHZKmhViSfljQvzjZC6LF9IWgkYCTkFlFWax8a8DSLOG5xvLlEiKcbs4Apll1sFFeD6XwhGLbAp9aZ81bX1CGPGxoqKyPKvBowg4j"
+      charset="UTF-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9waGFiLndtZnVzZXJjb250ZW50Lm9yZy9maWxlL2Rvd25sb2FkLzd1cXc1eG5wNXVudzRrY2dtbHJjL1BISUQtRklMRS1yZTM1cmF2Y3Rxc3NreWlhb3ppby9UYXNrXzFfLV9JbnRlcm4uaHRtbA"
+    />
+    <style>
+      .block {
+        background-color: gainsboro;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ilma-salsabil - Task 1</h1>
+    <h2>My code:</h2>
+    <p id="code" class="block"></p>
+    <h2>Results of my code:</h2>
+    <p id="results" class="block"></p>
+    <script id="task_id">
+      // {# INPUT #}
+    let data = [
+        {"page_id": 6682420, "creation_date": "2021-09-13", "title": "André Baniwa"},
+        {"page_id": 4246775, "creation_date": "2013-12-10", "title": "Benki Piyãko"},
+        {"page_id": 5882073, "creation_date": "2018-12-03", "title": "Célia Xakriabá"},
+        {"page_id": 6977673, "creation_date": "2022-10-05", "title": "Chirley Pankará"},
+        {"page_id": 7069044, "creation_date": "2023-02-16", "title": "Cristine Takuá"},
+        {"page_id": 2119511, "creation_date": "2009-01-28", "title": "Eliane Potiguara"},
+        {"page_id": 6714407, "creation_date": "2021-10-09", "title": "Jaider Esbell"},
+        {"page_id": 6977117, "creation_date": "2022-10-04", "title": "Jerônimo Rodrigues"},
+        {"page_id": 6935831, "creation_date": "2022-08-02", "title": "Nanblá Gakran"},
+        {"page_id": 4908665, "creation_date": "2015-11-13", "title": "Sônia Guajajara"},
+        {"page_id": 5886895, "creation_date": "2018-12-12", "title": "Vãngri Kaingáng"},
+        {"page_id": 6549130, "creation_date": "2021-04-10", "title": "Zezico Guajajara"},
+    ];
+      
+    // {# YOUR CODE HERE #}
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return date.toLocaleDateString("en-US", options);
+      }
+
+      function formatArticle(article) {
+        return `Article "${article.title}" (Page ID ${
+          article.page_id
+        }) was created at ${formatDate(article.creation_date)}.`;
+      }
+
+      function displayResults() {
+        const resultsElement = document.getElementById("results");
+        resultsElement.innerHTML = data.map(formatArticle).join("<br>");
+      }
+
+      // Call the function to display results
+      displayResults();
+    </script>
+    <script>
+      document.getElementById("code").innerText =
+        document.getElementById("task_id").text;
+    </script>
+  </body>
+</html>
